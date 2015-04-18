@@ -13,5 +13,6 @@
  *= require css/main
  *= require css/grid
  *= require css/fonts
+ *= require css/dropdown
  *= require_self
  */

@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require js/dropdown
+//= require public_launcher
 //= require turbolinks
-//= require_tree .
