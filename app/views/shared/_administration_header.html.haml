@@ -1,0 +1,26 @@
+.wrapper
+  %header.main-header
+    %a.logo{:href => "/administration"}
+      %b Administration
+    %nav.navbar.navbar-static-top{:role => "navigation"}
+      %a.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
+        %span.sr-only Toggle navigation
+  %aside.main-sidebar
+    %section.sidebar
+      %ul.sidebar-menu
+        %li.header MENU
+        %li{:class => active_menu('dasboard') }
+          %a{:href => administration_root_path }
+            %span Dashboard
+        %li
+          %a{:href => "#"}
+            %span Another Link
+        %li.treeview
+          %a{:href => "#"}
+            %span Multilevel
+            %i.fa.fa-angle-left.pull-right
+          %ul.treeview-menu
+            %li
+              %a{:href => "#"} Link in level 2
+            %li
+              %a{:href => "#"} Link in level 2

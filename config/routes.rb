@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :administration do
-    get '/' => 'dasboard#index'
+    root to: 'dasboard#index'
   end
 
   get 'public/index'
