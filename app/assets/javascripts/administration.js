@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require js/bootstrap
+//= require js/jquery.slimscroll
+//= require js/fastclick
+//= require js/app
+//= require jquery
 //= require turbolinks
 //= require_tree .

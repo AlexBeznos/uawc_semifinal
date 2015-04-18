@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :administration do
+    get '/' => 'dasboard#index'
+  end
+
   get 'public/index'
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
