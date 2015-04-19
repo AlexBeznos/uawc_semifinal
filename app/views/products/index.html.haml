@@ -19,19 +19,6 @@
                 = link_to category.name, products_path(:category => category.slug), class: 'catalogue_cat-list_item_link'
           .row
             %hr.catalogue_line/
-          %form.catalogue_producer-form{:action => "#"}
-            %h2.catalogue_title Виробник
-            .catalogue_producer-form_reset
-              %label.catalogue_producer-form_reset_label{:for => "catalogueProducerFormReset"}
-                зкинути
-                %i.catalogue_producer-form_reset_icon
-              %input#catalogueProducerFormReset.catalogue_producer-form_reset_input{:type => "reset", :value => ""}/
-            %input#producerDerby.catalogue_producer-form_checkbox{:name => "derby", :type => "checkbox"}/
-            %label.catalogue_producer-form_label{:for => "producerDerby"} Derby
-            %input#producerVif.catalogue_producer-form_checkbox{:name => "vif", :type => "checkbox"}/
-            %label.catalogue_producer-form_label{:for => "producerVif"} Vif
-            %input#producerTanyaKlyova.catalogue_producer-form_checkbox{:name => "tanya_klyova", :type => "checkbox"}/
-            %label.catalogue_producer-form_label{:for => "producerTanyaKlyova"} Авторські сумки від Tanya Klyova
       .col-lg-9.col-md-8
         .row
           .col-sm-4
@@ -45,7 +32,7 @@
               .catalogue_sort_wrapper
                 %select#sort.catalogue_sort_select.catalogue_sort_item{:name => "sort"}
                   %option{:value => "1"} Популярністю
-                  %option{:value => "1"} Ціною
+                  %option{:value => "2"} Ціною
         .row
           .row
             - @advertisments.each do |advertisment|

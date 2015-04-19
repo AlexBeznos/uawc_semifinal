@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :height
       t.integer :depth
       t.integer :color
-      t.string :cost
+      t.integer :cost
       t.text :description
       t.string :slug
 
