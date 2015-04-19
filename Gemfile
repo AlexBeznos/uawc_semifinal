@@ -26,12 +26,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'haml-rails'
 gem 'kaminari'
 gem 'aasm'
+gem 'simple_form'
+
 
 # configuration
 gem 'figaro'
 
 # dump db
 gem 'yaml_db'
+
+# img managment
+gem "paperclip", "~> 4.2"
 
 
 

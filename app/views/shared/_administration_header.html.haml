@@ -12,9 +12,9 @@
         %li{:class => active_menu('dasboard') }
           %a{:href => administration_root_path }
             %span Dashboard
-        %li
-          %a{:href => "#"}
-            %span Another Link
+        %li{:class => active_menu('categories') }
+          %a{:href => administration_categories_path}
+            %span Categories
         %li.treeview
           %a{:href => "#"}
             %span Multilevel

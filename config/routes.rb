@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :administration do
     root to: 'dasboard#index'
+    resources :categories, except: [:show]
   end
 
   get 'public/index'
