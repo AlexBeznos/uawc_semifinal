@@ -14,5 +14,6 @@
  *= require css/grid
  *= require css/fonts
  *= require css/dropdown
+ *= require public_styles
  *= require_self
  */

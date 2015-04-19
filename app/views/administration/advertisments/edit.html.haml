@@ -1,0 +1,14 @@
+= content_for :title, "Edit Advertisment"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Advertisments', administration_advertisments_path
+  - navigation_add "Advertisments #{@advertisment.title}", administration_advertisment_path(@advertisment)
+  - navigation_add 'Edit', edit_administration_advertisment_path(@advertisment)
+  = render_navigation
+
+%section.content
+  .row
+    .col-md-6
+      .box.box-solid
+        .box-body= render 'form'

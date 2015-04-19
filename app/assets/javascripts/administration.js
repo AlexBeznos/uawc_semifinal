@@ -16,5 +16,5 @@
 //= require js/jquery.slimscroll
 //= require js/fastclick
 //= require js/app
-//= require jquery
+//= require input_binding
 //= require turbolinks

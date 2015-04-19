@@ -1,0 +1,24 @@
+%article.col-lg-4.col-sm-6
+  - case advertisment.kind
+  - when 'collection'
+    %a.content_item{:href => "#"}
+      %img.content_item_text-white_img{:alt => "", :height => "421", :src => advertisment.background_image.url, :width => "351"}/
+      %h4.content_item_text-white
+        - if advertisment.title_position == 'top'
+          %span.content_item_text-white_line.content_item_text-white_brand= advertisment.title
+          %span.content_item_text-white_line= truncate(advertisment.body, length: 43)
+        - elsif advertisment.title_position == 'bottom'
+          %span.content_item_text-white_line= truncate(advertisment.body, length: 43)
+          %span.content_item_text-white_line.content_item_text-white_brand= advertisment.title
+  - when 'question'
+    .content_item
+      %img.content_item--block-text_img{:alt => "", :height => "65", :src => advertisment.image.url}/
+      %h4.content_item--block-text_title= advertisment.title
+      %hr.content_item_line{:class => "content_item_line--#{advertisment.line_color}"}/
+      .content_item--block-text_descr= truncat(advertisment.body, length: 86)
+  - when 'advice'
+    %a.content_item.content_item--link-white{:href => "#"}
+      %img.content_item--link-white_img{:alt => "", :height => "229", :src => advertisment.image.url}/
+      %h4.content_item--link-white_title= advertisment.title
+      %hr.content_item_line.content_item_line--link-white{:class => "content_item_line--#{advertisment.line_color}"}/
+      .content_item--link-white_descr= advertisment.body

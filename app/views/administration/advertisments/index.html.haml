@@ -1,0 +1,29 @@
+= content_for :title, "Advertisments"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Advertisments', administration_advertisments_path
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-header= link_to 'add new advertisment', new_administration_advertisment_path, class: 'btn btn-primary btn-flat btn-block btn-sm'
+    .box-body
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th image
+            %th image_background
+            %th title
+            %th body
+            %th
+        %tbody
+        - @advertisments.each do |advertisment|
+          %tr
+            %th= image_tag advertisment.image.url, height: '50' if advertisment.image?
+            %th= image_tag advertisment.background_image.url, height: '50' if advertisment.background_image?
+            %td= link_to advertisment.title, administration_advertisment_path(advertisment)
+            %td{:style => 'max-width: 200px'}= advertisment.body
+            %td
+              = link_to 'edit', edit_administration_advertisment_path(advertisment), class: 'btn btn-warning'
+              = link_to 'destroy', administration_advertisment_path(advertisment), class: 'btn btn-danger', method: 'DELETE'

@@ -1,0 +1,40 @@
+= content_for :title, "Advertisment #{@advertisment.title}"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Advertisments', administration_advertisments_path
+  - navigation_add "Advertisments #{@advertisment.title}", administration_advertisment_path(@advertisment)
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-body
+      .row
+        .col-md-6
+          %ul.products-list.product-list-in-box
+            %li.item
+              .product-img
+                = image_tag @advertisment.image.url if @advertisment.image?
+                = image_tag @advertisment.background_image.url if @advertisment.background_image?
+              .product-info
+                %a.product-title{:href => "#"}
+                  = @advertisment.title
+                  %span.label.label-info.pull-right= @advertisment.kind
+                %span.product-description
+                  = @advertisment.body
+                - unless @advertisment.price.empty?
+                  %span.product-description
+                    Price:
+                    = @advertisment.price
+                - if @advertisment.line_color
+                  %span.product-description
+                    Line color:
+                    = @advertisment.line_color
+                - if @advertisment.title_position
+                  %span.product-description
+                    Title position:
+                    = @advertisment.title_position
+        .col-md-6
+          = link_to 'add new advertisment', new_administration_advertisment_path, class: 'btn btn-primary btn-flat btn-sm'
+          = link_to 'edit', edit_administration_advertisment_path(@advertisment), class: 'btn btn-warning btn-flat btn-sm'
+          = link_to 'destroy', administration_advertisment_path(@advertisment), class: 'btn btn-danger btn-flat btn-sm', method: 'DELETE'

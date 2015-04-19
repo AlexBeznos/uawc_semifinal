@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :administration do
     root to: 'dasboard#index'
     resources :categories, except: [:show]
+    resources :advertisments
   end
 
   get 'public/index'

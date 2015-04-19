@@ -1,0 +1,27 @@
+= simple_form_for [:administration, @advertisment] do |f|
+  = f.error_notification
+  = f.input :kind, collection: Advertisment.kinds.keys
+
+  .collection.advice.product
+    = f.input :title
+    = f.input :body
+
+  .advice.product
+    - if @advertisment.image?
+      = image_tag @advertisment.image.url, height: 100
+    = f.input :image, as: :file
+
+  .collection
+    - if @advertisment.background_image?
+      = image_tag @advertisment.background_image.url, height: 100
+    = f.input :background_image, as: :file
+    = f.input :title_position, collection: Advertisment.title_positions.keys
+
+  .advice.question
+    = f.input :line_color, collection: Advertisment.line_colors.keys
+
+  .product
+    = f.input :price
+    = f.input :background_image, as: :file
+
+  = f.button :submit

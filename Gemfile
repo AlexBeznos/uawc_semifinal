@@ -27,6 +27,7 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'aasm'
 gem 'simple_form'
+gem 'dependent-fields-rails'
 
 
 # configuration
