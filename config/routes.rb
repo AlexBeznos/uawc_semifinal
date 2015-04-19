@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :news
     resources :pages
     resources :products
+    resources :manufacturers, except: :show
     resources :subscribers, only: :index
   end
 

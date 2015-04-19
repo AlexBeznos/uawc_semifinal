@@ -1,0 +1,14 @@
+= content_for :title, "Edit Manufacturers"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Manufacturers', administration_manufacturers_path
+  - navigation_add "<anufacturers #{@manufacturer.id}", administration_manufacturers_path(@manufacturer.id)
+  - navigation_add 'Edit', edit_administration_manufacturer_path(@manufacturer.id)
+  = render_navigation
+
+%section.content
+  .row
+    .col-md-6
+      .box.box-solid
+        .box-body= render 'form'

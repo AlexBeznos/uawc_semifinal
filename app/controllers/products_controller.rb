@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @category_list = @category.category_id.nil? ? @category.categories : @category.category.categories
     @products = @category.products
     @advertisments = Advertisment.limit(2)
+    @count = Product.count
   end
 
   def show

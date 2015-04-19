@@ -73,24 +73,18 @@
       .product_producer
         .col-sm-6.col-lg-12
           .product_producer_title Виробник:
-          %img.product_producer_logo{:alt => "Derby", :src => "images/product/derby.jpg"}/
+          %img.product_producer_logo{:alt => @product.manufacturer.name, :src => @product.manufacturer.image.url}/
           %dl
             %dt
               %span.sr-text Сайт:
             %dd
-              %a.contact-item.product_producer_contact-item.product_producer_link{:href => "#"} http://www.derby.ua
+              %a.contact-item.product_producer_contact-item.product_producer_link{:href => @product.manufacturer.site}= @product.manufacturer.site
             %dt
               %span.sr-text Адреса:
             %dd
-              %span.contact-item.product_producer_contact-item.product_producer_address Украина, г. Киев, пр-т Гагарина, 23
+              %span.contact-item.product_producer_contact-item.product_producer_address= @product.manufacturer.address
             %dt
               %span.sr-text Телефон:
             %dd
               %span.contact-item.product_producer_contact-item.product_producer_phones
-                %a.product_producer_phones_link{:href => "tel:+380442927205"}> +38 (044) 292-7205
-                ,
-                %a.product_producer_phones_link{:href => "tel:+380442962538"} 296-2538
-                %br/
-                %a.product_producer_phones_link{:href => "tel:+38044296-1041"} +38 (044) 296-1041
-        .col-sm-6.col-lg-12
-          %img.product_producer_map{:alt => "", :height => "222", :src => "images/product/map.jpg", :width => "298"}/
+                %a.product_producer_phones_link{:href => "tel:#{@product.manufacturer.phone}"}= @product.manufacturer.phone

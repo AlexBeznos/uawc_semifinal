@@ -31,6 +31,8 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'truncate_html'
 gem 'cyrillizer'
 gem 'has_unique_slug'
+gem 'phony_rails'
+gem "validate_url"
 
 # configuration
 gem 'figaro'

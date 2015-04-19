@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   has_many :assets, :dependent => :destroy
   has_and_belongs_to_many :categories
   belongs_to :category
+  belongs_to :manufacturer
 
   accepts_nested_attributes_for :assets
   has_unique_slug :subject => Proc.new {|product| "#{product.name.to_lat.urlize({:convert_spaces => true})}"}

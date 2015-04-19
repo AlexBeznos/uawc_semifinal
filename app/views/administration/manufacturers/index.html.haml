@@ -1,0 +1,31 @@
+= content_for :title, "Manufacturers"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Manufacturers', administration_manufacturers_path
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-header= link_to 'add new manufacturer', new_administration_manufacturer_path, class: 'btn btn-primary btn-flat btn-block btn-sm'
+    .box-body
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th image
+            %th name
+            %th address
+            %th phone
+            %th site
+            %th
+        %tbody
+        - @manufacturers.each do |manufacturer|
+          %tr
+            %td= image_tag manufacturer.image.url, weight: 100
+            %td= manufacturer.name
+            %td= manufacturer.address
+            %td{:style => 'max-width: 150px'}= manufacturer.phone
+            %td= manufacturer.site
+            %td
+              = link_to 'edit', edit_administration_manufacturer_path(manufacturer), class: 'btn btn-warning'
+              = link_to 'destroy', administration_manufacturer_path(manufacturer), class: 'btn btn-danger', method: 'DELETE'
