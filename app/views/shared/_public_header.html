@@ -33,12 +33,9 @@
                             <li class="nav_list_item"><a href="#" data-dropdown="#dropdown-1" class="nav_list_item_link nav_list_item_link--header">
                                 Каталог <span class="triangle"></span></a>
                                 <ul>
-                                    <li><a href="#1">Item 1</a></li>
-                                    <li><a href="#2">Item 2</a></li>
-                                    <li><a href="#3">Item 3</a></li>
-                                    <li><a href="#4">Item 4</a></li>
-                                    <li><a href="#5">Item 5</a></li>
-                                    <li><a href="#5">Item 6</a></li>
+                                    <%- menu_categories.each do |category|%>
+                                      <li><%= link_to category.name, 'sadfas' %></li>
+                                    <% end %>
                                 </ul>
                             </li>
                             <li class="nav_list_item"><a href="#" class="nav_list_item_link nav_list_item_link--header">Новини</a></li>

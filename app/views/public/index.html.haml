@@ -31,14 +31,21 @@
   .wrapper
     .block-title.block-title--subscription Оформити підписку на новини
     %hr.subscription_line/
-    .subscription_title-descr Дізнавайтеся першими про нові товари українського виробника
-    %form.subscription_form{:action => "#"}
+    .subscription_title-descr
+      Дізнавайтеся першими про нові товари українського виробника
+      %br
+      - if flash[:notice]
+        = flash[:notice]
+      - elsif flash[:alert]
+        = flash[:alert]
+    = form_for @subscriber, :html => {:class => 'subscription_form'} do |f|
       .subscription_form_item.subscription_form_item--input
-        %input.subscription_form_control.subscription_form_input{:placeholder => "Ваше ім'я", :type => "text"}/
+        = f.text_field :name, class: 'subscription_form_control subscription_form_input', :placeholder => "Ваше ім'я"
       .subscription_form_item.subscription_form_item--input
-        %input.subscription_form_control.subscription_form_input{:placeholder => "E-mail", :type => "text"}/
+        = f.text_field :email, class: 'subscription_form_control subscription_form_input', :placeholder => "E-mail"
       .subscription_form_item.subscription_form_item--submit
-        %input.subscription_form_control.subscription_form_submit{:type => "submit", :value => "Підписатися"}/
+        = f.submit "Підписатися", class: "subscription_form_control subscription_form_submit"
+
 .block-white.social
   .wrapper
     .news_wrapper

@@ -5,10 +5,12 @@ Rails.application.routes.draw do
     resources :advertisments
     resources :news
     resources :pages
+    resources :subscribers, only: :index
   end
 
   get 'public/index'
   resources :news, only: [:index, :show]
+  resources :subscribers, only: :create
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

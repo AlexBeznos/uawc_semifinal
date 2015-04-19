@@ -1,0 +1,20 @@
+= content_for :title, "Subscribers"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Subscribers', administration_subscribers_path
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-body
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th name
+            %th email
+        %tbody
+        - @subscribers.each do |subscriber|
+          %tr
+            %td= subscriber.name
+            %td= subscriber.email
