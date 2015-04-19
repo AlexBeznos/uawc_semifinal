@@ -16,5 +16,6 @@
 //= require js/jquery.slimscroll
 //= require js/fastclick
 //= require js/app
+//= require bootstrap-wysihtml5
 //= require input_binding
 //= require turbolinks

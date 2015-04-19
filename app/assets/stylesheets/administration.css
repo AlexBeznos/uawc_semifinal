@@ -14,6 +14,7 @@
  *= require css/bootstrap
  *= require css/AdminLTE
  *= require css/skins/skin-blue
+ *= require bootstrap-wysihtml5
  *= require adv_form
  *= require_self
  */

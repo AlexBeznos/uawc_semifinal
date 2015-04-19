@@ -3,9 +3,11 @@ Rails.application.routes.draw do
     root to: 'dasboard#index'
     resources :categories, except: [:show]
     resources :advertisments
+    resources :news
   end
 
   get 'public/index'
+  resources :news, only: [:index, :show]
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

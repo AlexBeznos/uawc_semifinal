@@ -15,7 +15,7 @@
       %img.content_item--block-text_img{:alt => "", :height => "65", :src => advertisment.image.url}/
       %h4.content_item--block-text_title= advertisment.title
       %hr.content_item_line{:class => "content_item_line--#{advertisment.line_color}"}/
-      .content_item--block-text_descr= truncat(advertisment.body, length: 86)
+      .content_item--block-text_descr= truncate(advertisment.body, length: 86)
   - when 'advice'
     %a.content_item.content_item--link-white{:href => "#"}
       %img.content_item--link-white_img{:alt => "", :height => "229", :src => advertisment.image.url}/

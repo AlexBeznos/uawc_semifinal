@@ -27,8 +27,10 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'aasm'
 gem 'simple_form'
-gem 'dependent-fields-rails'
-
+gem 'bootstrap-wysihtml5-rails'
+gem 'truncate_html'
+gem 'cyrillizer'
+gem 'has_unique_slug'
 
 # configuration
 gem 'figaro'

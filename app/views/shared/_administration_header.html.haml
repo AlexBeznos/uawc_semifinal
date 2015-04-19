@@ -18,12 +18,6 @@
         %li{:class => active_menu('advertisments') }
           %a{:href => administration_advertisments_path}
             %span Advertisments
-        %li.treeview
-          %a{:href => "#"}
-            %span Multilevel
-            %i.fa.fa-angle-left.pull-right
-          %ul.treeview-menu
-            %li
-              %a{:href => "#"} Link in level 2
-            %li
-              %a{:href => "#"} Link in level 2
+        %li{:class => active_menu('news') }
+          %a{:href => administration_news_index_path}
+            %span News
