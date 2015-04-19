@@ -1,0 +1,25 @@
+= content_for :title, "Products"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Products', administration_products_path
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-header= link_to 'add new product', new_administration_product_path, class: 'btn btn-primary btn-flat btn-block btn-sm'
+    .box-body
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th image
+            %th name
+            %th
+        %tbody
+        - @products.each do |product|
+          %tr
+            %th= image_tag product.assets.first.image.url, height: '100'
+            %td= link_to product.name, administration_product_path(product)
+            %td
+              = link_to 'edit', edit_administration_product_path(product), class: 'btn btn-warning'
+              = link_to 'destroy', administration_product_path(product), class: 'btn btn-danger', method: 'DELETE'

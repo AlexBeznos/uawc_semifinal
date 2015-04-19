@@ -1,0 +1,21 @@
+= content_for :title, "Product #{@product.name}"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Products', administration_products_path
+  - navigation_add "Product #{@product.id}", administration_product_path(@product)
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-header.with-border
+      = @product.name
+    .box-body
+      .row
+        .col-md-6
+          %ul.list-group
+            %li.list-group-item= @product.description.html_safe
+        .col-md-6
+          = link_to 'add new product', new_administration_product_path, class: 'btn btn-primary btn-flat btn-sm'
+          = link_to 'edit', edit_administration_product_path(@product), class: 'btn btn-warning btn-flat btn-sm'
+          = link_to 'destroy', administration_product_path(@product), class: 'btn btn-danger btn-flat btn-sm', method: 'DELETE'

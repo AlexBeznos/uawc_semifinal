@@ -22,3 +22,11 @@
       %h4.content_item--link-white_title= advertisment.title
       %hr.content_item_line.content_item_line--link-white{:class => "content_item_line--#{advertisment.line_color}"}/
       .content_item--link-white_descr= advertisment.body
+  - when 'product'
+    %a.catalogue_adv.catalogue_adv--s1{:href => "#"}
+      %h4.catalogue_adv--s1_title= advertisment.title
+      %h5.catalogue_adv--s1_title-descr= advertisment.body.html_safe
+      .catalogue_adv--s1_btn-order
+        = advertisment.price
+        грн.
+      %img.catalogue_adv--s1_img{ :src => advertisment.image.url}/

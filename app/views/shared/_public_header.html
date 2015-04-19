@@ -34,7 +34,7 @@
                                 Каталог <span class="triangle"></span></a>
                                 <ul>
                                     <%- menu_categories.each do |category|%>
-                                      <li><%= link_to category.name, 'sadfas' %></li>
+                                      <li><%= link_to category.name, products_path(:category => category.slug) %></li>
                                     <% end %>
                                 </ul>
                             </li>

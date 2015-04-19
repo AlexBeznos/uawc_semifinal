@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419145214) do
+ActiveRecord::Schema.define(version: 20150419164706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20150419145214) do
     t.integer  "line_color"
   end
 
+  create_table "assets", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "product_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "image_file_name"
@@ -44,6 +54,14 @@ ActiveRecord::Schema.define(version: 20150419145214) do
     t.integer  "category_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "slug"
+  end
+
+  create_table "categories_products", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "product_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "news", force: :cascade do |t|
@@ -61,6 +79,23 @@ ActiveRecord::Schema.define(version: 20150419145214) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "reserved_for"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "manufacturer_id"
+    t.string   "name"
+    t.string   "material"
+    t.integer  "volume"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "depth"
+    t.integer  "color"
+    t.string   "cost"
+    t.text     "description"
+    t.string   "slug"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
