@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:show]
     resources :advertisments
     resources :news
+    resources :pages
   end
 
   get 'public/index'

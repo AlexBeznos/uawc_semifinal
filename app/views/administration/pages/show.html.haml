@@ -1,0 +1,26 @@
+= content_for :title, "Page #{@page.title}"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Pages', administration_pages_path
+  - navigation_add "Page #{@page.id}", administration_page_path(@page)
+  = render_navigation
+
+%section.content
+  .box.box-solid
+    .box-header.with-border
+      = @page.title
+    .box-body
+      .row
+        .col-md-6
+          URL alias:
+          = @page.slug
+          %br
+          - if @page.reserved_for
+            Reserved for
+            = @page.reserved_for
+          = @page.body.html_safe
+        .col-md-6
+          = link_to 'add new news', new_administration_page_path, class: 'btn btn-primary btn-flat btn-sm'
+          = link_to 'edit', edit_administration_page_path(@page), class: 'btn btn-warning btn-flat btn-sm'
+          = link_to 'destroy', administration_page_path(@page), class: 'btn btn-danger btn-flat btn-sm', method: 'DELETE'

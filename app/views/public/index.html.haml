@@ -1,11 +1,8 @@
+= content_for :title, @page.title
 %section.buy-ukr
   .wrapper
     .buy-ukr_content
-      %h2.block-title.buy-ukr_content_title Купуй Українське
-      %h3.buy-ukr_content_title-descr інтернет-каталог українських виробників
-      %hr.buy-ukr_line/
-      .buy-ukr_text-item
-        Наразі купувати українські продукти та речі не тільки вигідно, а є вже правилом гарного тону. Українські виробники виробляють майже все: від колготок до танків, від іграшок  до спортивного інвентарю.
+      = @page.body.html_safe
       .square.square--big.square--buy-ukr.square--buy-ukr-1
       .square.square--big.square--buy-ukr.square--buy-ukr-2
       .square.square--small.square--buy-ukr.square--buy-ukr-3

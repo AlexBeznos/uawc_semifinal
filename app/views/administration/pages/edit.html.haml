@@ -1,0 +1,14 @@
+= content_for :title, "Edit Pages"
+%section.content-header
+  %h1= yield(:title)
+
+  - navigation_add 'Pages', administration_pages_path
+  - navigation_add "Pages #{@page.id}", administration_pages_path(@page.id)
+  - navigation_add 'Edit', edit_administration_page_path(@page.id)
+  = render_navigation
+
+%section.content
+  .row
+    .col-md-6
+      .box.box-solid
+        .box-body= render 'form'
