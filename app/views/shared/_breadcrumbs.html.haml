@@ -1,6 +1,0 @@
-%ol.breadcrumb
-  - nav.each do |n|
-    -unless n.equal? nav.last
-      %li= link_to n[:title], n[:url]
-    -else
-      %li= n[:title]
