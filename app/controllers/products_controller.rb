@@ -14,5 +14,17 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:search])
+    @categories = get_categories(@products)
   end
+
+  private
+    def get_categories(products)
+      categories = []
+
+      products.each do |prod|
+        categories.push(prod.category.category)
+      end
+
+      categories.uniq
+    end
 end

@@ -1,0 +1,93 @@
+<%= content_for :title, 'Поиск' %>
+
+<div class="wrapper">
+    <div class="row">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs_item"><a class="breadcrumbs_item_link" href="/">Головна</a></li>
+            <li class="breadcrumbs_item"><a class="breadcrumbs_item_link" href="#">Пошук</a></li>
+        </ul>
+    </div>
+
+    <div class="catalogue">
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <aside class="catalogue_aside">
+                    <% @categories.each do |category|%>
+                    <h2 class="catalogue_title"><%= category.name %></h2>
+                      <% category.categories.each do |sub_cat|%>
+                        <ul class="catalogue_cat-list" role="menu">
+                            <li role="menuitem" class="catalogue_cat-list_item">
+                              <%= link_to sub_cat.name, products_path(:category => sub_cat.slug), class: 'catalogue_cat-list_item_link' %>
+                            </li>
+                        </ul>
+                      <% end %>
+                    </h2>
+                    <% end %>
+
+                    <div class="row">
+                        <hr class="catalogue_line">
+                    </div>
+
+                    <form action="#" class="catalogue_producer-form">
+                        <h2 class="catalogue_title">Виробник</h2>
+
+                        <div class="catalogue_producer-form_reset">
+                            <label class="catalogue_producer-form_reset_label" for="catalogueProducerFormReset">зкинути <i class="catalogue_producer-form_reset_icon"></i></label>
+                            <input type="reset" id="catalogueProducerFormReset" class="catalogue_producer-form_reset_input" value="">
+                        </div>
+
+                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="derby" id="producerDerby">
+                        <label for="producerDerby" class="catalogue_producer-form_label">Derby</label>
+                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="vif" id="producerVif">
+                        <label class="catalogue_producer-form_label" for="producerVif">Vif</label>
+                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="tanya_klyova" id="producerTanyaKlyova">
+                        <label for="producerTanyaKlyova" class="catalogue_producer-form_label">Авторські сумки від Tanya Klyova</label>
+                    </form>
+                </aside>
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="catalogue_count">Всього <strong><%= @products.count %></strong> товарів</div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="catalogue_sort">
+                            <label class="catalogue_sort_item catalogue_sort_label" for="sort">Сортувати за:</label>
+                            <div class="catalogue_sort_wrapper">
+                                <select name="sort" id="sort" class="catalogue_sort_select catalogue_sort_item">
+                                    <option value="1">Популярністю</option>
+                                    <option value="1">Ціною</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <main>
+                        <div class="catalogue_items">
+                            <div class="row">
+                              <% @products.each do |product| %>
+                                <article class="col-lg-4 col-sm-6">
+                                    <div class="catalogue_item">
+                                        <%= link_to product_path(product), class: 'catalogue_item_link' do %>
+                                            <%= image_tag product.assets.first.image.url, height:267, width:209 %>
+                                        <% end %>
+
+                                        <h4 class="catalogue_item_name"><%= product.name %></h4>
+                                        <h4 class="catalogue_item_price"><%= product.cost %> грн</h4>
+                                    </div>
+                                </article>
+                              <% end %>
+                            </div>
+
+                            <div class="catalogue_items_load">
+                                <button class="catalogue_icon-load" role="button"></button>
+                                <br>Завантажити ще
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
