@@ -467,12 +467,10 @@ strong {
   height: 107px;
   padding-top: 44px;
 }
-.nav_list_item_link--header:focus,
 .nav_list_item_link--header:hover {
   background-color: #4dcae2;
   color: #fff;
 }
-.nav_list_item_link--header:focus .triangle,
 .nav_list_item_link--header:hover .triangle {
   border-top: 0;
   width: 0;
