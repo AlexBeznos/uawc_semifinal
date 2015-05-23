@@ -43,6 +43,12 @@ gem 'yaml_db'
 # img managment
 gem "paperclip", "~> 4.2"
 
+# geo info
+gem 'geokit'
+
+# map
+gem 'gmaps4rails'
+
 
 
 group :development, :test do

@@ -88,3 +88,5 @@
             %dd
               %span.contact-item.product_producer_contact-item.product_producer_phones
                 %a.product_producer_phones_link{:href => "tel:#{@product.manufacturer.phone}"}= @product.manufacturer.phone
+        .col-sm-6.col-lg-12
+          %iframe{:src => "https://maps.google.com/maps?q=#{@product.manufacturer.lat},#{@product.manufacturer.lng}&amp;output=embed"}
