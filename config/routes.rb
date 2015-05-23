@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/404' => 'errors#not_found', as: :not_found
   get '/lang/:locale' => 'localization#set_locale', as: :set_locale
 
+  post '/send_callback' => 'subscribers#send_mail'
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

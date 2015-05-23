@@ -9,6 +9,11 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def send_mail
+    BasicMailer.callback(params[:username], params[:useremail], params[:usertext]).deliver_now
+    redirect_to request.referrer
+  end
+
   private
   def subscribers_params
     params.require(:subscriber).permit(:name, :email)

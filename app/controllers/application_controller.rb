@@ -26,8 +26,5 @@ class ApplicationController < ActionController::Base
       else
         I18n.locale = session[:locale]
       end
-
-      puts '++++++++++'
-      puts I18n.locale
     end
 end
