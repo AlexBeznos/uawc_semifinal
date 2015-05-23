@@ -381,7 +381,7 @@ strong {
   color: #3c3c3c;
 }
 .contact-mail:hover {
-  color: #595959;
+  color: #01b4d5;
   text-decoration: underline;
 }
 .contact-mail--header {
@@ -964,16 +964,16 @@ strong {
   margin-top: 58px;
   padding: 0 7px;
 }
-.news_title {
+.news_item_title {
   color: #000;
   font: 800 18px 'Open Sans', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   line-height: 1.4;
 }
-.news_title:hover {
+.news_item_title:hover {
   text-decoration: underline;
 }
-.news_descr {
+.news_item_descr {
   margin-top: 21px;
   font: 400 16px 'PT Sans', Arial, Helvetica, sans-serif;
   line-height: 1.2;
@@ -1529,6 +1529,7 @@ strong {
   display: inline-block;
   margin-bottom: 12px;
   background-color: #fff;
+  cursor: pointer;
   background-image: url("../images/sprites.png");
   background-position: 0px -88px;
   width: 49px;
