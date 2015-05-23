@@ -948,12 +948,16 @@ strong {
   margin-top: 58px;
   padding: 0 7px;
 }
-.news_item_title {
+.news_title {
+  color: #000;
   font: 800 18px 'Open Sans', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   line-height: 1.4;
 }
-.news_item_descr {
+.news_title:hover {
+  text-decoration: underline;
+}
+.news_descr {
   margin-top: 21px;
   font: 400 16px 'PT Sans', Arial, Helvetica, sans-serif;
   line-height: 1.2;

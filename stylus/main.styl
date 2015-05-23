@@ -652,15 +652,18 @@ strong
         margin-top 58px
         padding 0 7px
         
-        &_title
-            font 800 18px font-OpenSans
-            upcase()
-            line-height 1.4
-        &_descr
-            margin-top 21px
-            font 400 16px font-PTSans
-            line-height 1.2
-            letter-spacing -.3px
+    &_title
+        color #000
+        font 800 18px font-OpenSans
+        upcase()
+        line-height 1.4
+        &:hover
+            underline()
+    &_descr
+        margin-top 21px
+        font 400 16px font-PTSans
+        line-height 1.2
+        letter-spacing -.3px
             
 .subscription
     padding 24px 0 37px 0
