@@ -18,7 +18,7 @@
                     <a class="main-header_phone-item main-header_phone-link" href="tel:121356"><span class="main-header_phone-link_code">0 (800)</span> 300-24-12</a>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <a class="contact-item contact-mail contact-mail--header" href="mailto:email@example.com">Написати нам</a>
+                    <a class="contact-item contact-mail contact-mail--header" href="#" data-feedback-popup>Написати нам</a>
                     <ul class="main-header_lang-list">
                         <li class="main-header_lang-list_item">
                             <a class="main-header_lang-list_item_link main-header_lang-list_item_link--active" href="#">Укр <span class="triangle"></span></a>
@@ -436,6 +436,28 @@
             © Интернет-каталог українських виробників «Купуй українське» 2015
         </div>
     </div>
+    <div class="popup-overlay"></div>
+    <!-- Контент поп-апа -->
+    <div class="popup-content">
+        <button class="popup-content_close" data-popup-close><span class="sr-text">Закрити</span></button>
+        <div class="popup-content_title">Написати нам</div>
+        <form action="#">
+            <div class="popup-content_row">
+                <input type="text" name="username" class="popup-content_input" placeholder="Введіть ваше ім'я" required>
+            </div>
+            <div class="popup-content_row">
+                <input type="text" name="useremail" class="popup-content_input" placeholder="E-mail" required>
+            </div>
+            <div class="popup-content_row">
+                <textarea class="popup-content_input popup-content_textarea" name="usertext" placeholder="Введіть ваше повідомлення" required></textarea>
+            </div>
+            <div class="popup-content_row">
+                <button class="popup-content_submit" type="submit">Відправити</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
 </footer>
 </body>
 </html> 

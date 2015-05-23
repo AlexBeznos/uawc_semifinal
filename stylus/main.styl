@@ -755,13 +755,18 @@ strong
         &_submit
             fw 600
             fs 20px
-            background-color #ffffff
-            color #686767
+            background-color #fff
+            color #000
             cursor pointer
             
             &:hover
-                color #282525
+                background-color #f6d416
+                color #fff
             
+            &:focus
+                background-color darken(#f6d416, 10%)
+                color #fff
+
             +below(grid-tablet)
                 width 50%
                 margin auto
@@ -1614,6 +1619,88 @@ strong
         &:hover
             color darken(#01b4d5, 10%)
 
+.popup-overlay
+    hide()
+    fixed top bottom
+    left 0
+    right 0
+    z-index 10
+    background-color #000
+    background-color rgba(0, 0, 0, .51)
+
+.popup-content
+    min-width 320px
+    hide()
+    position absolute
+    top 25%
+    left 50%
+    padding 0 40px
+    padding-bottom 50px
+    background-color #fff
+    z-index 15
+    border-radius 6px
+    box-shadow 0 0 79px #595959
+    
+    &_close
+        absolute right 15px top 15px
+        bg 'sprites.png'
+        size 19px 17px
+        spritePosition($i_popup_close)
+        cursor pointer 
+        
+        &:hover
+            background-position -148px -89px
+
+    &_row
+        margin-top 33px
+        text-align center
+
+    &_title
+        position relative
+        font 800 26px font-OpenSans
+        margin 40px 0 64px
+        text-align center
+        
+        &:after
+            position absolute
+            bottom -20px
+            left 0
+            right 0
+            margin auto
+            content " "
+            block()
+            size 60px 5px
+            background-color #e7302c
+        
+    &_input
+        width 490px
+        padding 13px 26px
+        border 1px solid #898989
+        font 400 16px font-OpenSans
+        border-radius 6px
+        
+        +below(grid-mobile)
+            width 90%
+        
+        &:focus
+            border 1px solid #01b4d5
+    
+    &_textarea
+        height 123px
+
+    &_submit
+        padding 14px 24px
+        color #fff
+        font 600 20px font-OpenSans
+        background-color #01b4d5
+        border-radius 5px
+        cursor pointer
+        
+        &:hover
+            background-color #17a5bf
+        &:focus
+            box-shadow inset 0 5px 0 rgba(32,115,130,.75)
+            
 @-moz-document url-prefix()
     .main-header_lang-list_item_link--active
         padding 25px 17px
