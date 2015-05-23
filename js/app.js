@@ -3,6 +3,26 @@ $(function () {
 
 	}
 
+	App.Dropdown = {
+		open: false,
+		init: function () {
+			$("[data-dropdown-toggle]").click(function () {
+				if (App.Dropdown.open) {
+					$(this).removeClass("active");
+
+					$(".dropdown_content").fadeOut();
+					App.Dropdown.open = false;
+				}
+				else {
+					$(this).addClass("active");
+					
+					$(".dropdown_content").fadeIn();
+					App.Dropdown.open = true;
+				}
+			});
+		}
+	}
+
 	App.Popup = {
 		el: $(".popup-content"),
 		overlay: $(".popup-overlay"),
@@ -34,4 +54,5 @@ $(function () {
 	}
 
 	App.Popup.init();
+	App.Dropdown.init();
 })
