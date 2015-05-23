@@ -189,6 +189,19 @@ strong
             padding 9px 25px 9px 12px
             font 400 16px font-OpenSans
             
+            &::-webkit-input-placeholder
+                font 400 14px font-OpenSans
+                color #c3c3c3
+            &:-moz-placeholder
+                font 400 14px font-OpenSans
+                color #c3c3c3
+            &::-moz-placeholder
+                font 400 14px font-OpenSans
+                color #c3c3c3
+            &:-ms-input-placeholder
+                font 400 14px font-OpenSans
+                color #c3c3c3
+            
 .contact-item
     display inline-block
     position relative
@@ -1554,10 +1567,51 @@ strong
         spritePosition($i_social_like)
         spriteWidth($i_social_like)
         spriteHeight($i_social_like)
+        
+.error-404
+    margin-top 70px
+    padding-bottom 50px
+    text-align center
+    font 400 34px font-OpenSans
+    line-height 1.1
+    
+    +below(grid-tablet)
+        fs 28px
+    +below(grid-mobile-xs)
+        fs 16px
 
-.main-header_search_input::-webkit-input-placeholder
-   font 400 14px font-OpenSans
-   color #c3c3c3
+    &_img
+        block()
+        margin auto
+        max-width 100%
+        height auto
+        
+    &_title
+        margin 18px 0 8px
+        font 800 38px font-OpenSans
+        
+        +below(grid-tablet)
+            fs 30px
+        +below(grid-mobile-xs)
+            fs 22px
+        
+    &_link
+        display inline-block
+        margin-bottom 20px
+        font 600 31px font-OpenSans
+        color #01b4d5
+        underline()
+        
+        &:hover
+            nodecorate()
+        
+        +below(grid-tablet)
+            fs 21px
+        +below(grid-mobile-xs)
+            fs 14px
+
+        &:hover
+            color darken(#01b4d5, 10%)
 
 @-moz-document url-prefix()
     .main-header_lang-list_item_link--active

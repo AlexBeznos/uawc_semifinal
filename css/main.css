@@ -350,6 +350,22 @@ strong {
   padding: 9px 25px 9px 12px;
   font: 400 16px 'Open Sans', Arial, Helvetica, sans-serif;
 }
+.main-header_search_input::-webkit-input-placeholder {
+  font: 400 14px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #c3c3c3;
+}
+.main-header_search_input:-moz-placeholder {
+  font: 400 14px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #c3c3c3;
+}
+.main-header_search_input::-moz-placeholder {
+  font: 400 14px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #c3c3c3;
+}
+.main-header_search_input:-ms-input-placeholder {
+  font: 400 14px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #c3c3c3;
+}
 .contact-item {
   display: inline-block;
   position: relative;
@@ -2091,9 +2107,65 @@ strong {
   width: 20px;
   height: 19px;
 }
-.main-header_search_input::-webkit-input-placeholder {
-  font: 400 14px 'Open Sans', Arial, Helvetica, sans-serif;
-  color: #c3c3c3;
+.error-404 {
+  margin-top: 70px;
+  padding-bottom: 50px;
+  text-align: center;
+  font: 400 34px 'Open Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+}
+@media only screen and (max-width: 768px) {
+  .error-404 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404 {
+    font-size: 16px;
+  }
+}
+.error-404_img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+.error-404_title {
+  margin: 18px 0 8px;
+  font: 800 38px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  .error-404_title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404_title {
+    font-size: 22px;
+  }
+}
+.error-404_link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font: 600 31px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #01b4d5;
+  text-decoration: underline;
+}
+.error-404_link:hover {
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  .error-404_link {
+    font-size: 21px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404_link {
+    font-size: 14px;
+  }
+}
+.error-404_link:hover {
+  color: #01a2c0;
 }
 @-moz-document url-prefix() {
   .main-header_lang-list_item_link--active {
