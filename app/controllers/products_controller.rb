@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   def search
     @products = Product.search(params[:search])
     @categories = get_categories(@products)
+    @brands = @products.map {|prod| prod.manufacturer}
   end
 
   private

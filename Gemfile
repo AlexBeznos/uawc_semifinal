@@ -46,8 +46,6 @@ gem "paperclip", "~> 4.2"
 # geo info
 gem 'geokit'
 
-# map
-gem 'gmaps4rails'
 
 
 

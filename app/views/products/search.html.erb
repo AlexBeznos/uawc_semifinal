@@ -21,27 +21,23 @@
                             </li>
                         </ul>
                       <% end %>
-                    </h2>
                     <% end %>
 
                     <div class="row">
                         <hr class="catalogue_line">
                     </div>
 
-                    <form action="#" class="catalogue_producer-form">
+                    <form action=<%= "/search?search=#{params[:search]}" %> class="catalogue_producer-form">
                         <h2 class="catalogue_title">Виробник</h2>
 
                         <div class="catalogue_producer-form_reset">
                             <label class="catalogue_producer-form_reset_label" for="catalogueProducerFormReset">зкинути <i class="catalogue_producer-form_reset_icon"></i></label>
                             <input type="reset" id="catalogueProducerFormReset" class="catalogue_producer-form_reset_input" value="">
                         </div>
-
-                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="derby" id="producerDerby">
-                        <label for="producerDerby" class="catalogue_producer-form_label">Derby</label>
-                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="vif" id="producerVif">
-                        <label class="catalogue_producer-form_label" for="producerVif">Vif</label>
-                        <input type="checkbox" class="catalogue_producer-form_checkbox" name="tanya_klyova" id="producerTanyaKlyova">
-                        <label for="producerTanyaKlyova" class="catalogue_producer-form_label">Авторські сумки від Tanya Klyova</label>
+                        <% @brands.each do |brand| %>
+                          <input type="checkbox" class="catalogue_producer-form_checkbox" name=<%= brand.name %> id="producerDerby">
+                          <label for="producerDerby" class="catalogue_producer-form_label"><%= brand.name %></label>
+                        <% end %>
                     </form>
                 </aside>
             </div>

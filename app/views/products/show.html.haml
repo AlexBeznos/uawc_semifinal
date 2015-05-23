@@ -89,4 +89,54 @@
               %span.contact-item.product_producer_contact-item.product_producer_phones
                 %a.product_producer_phones_link{:href => "tel:#{@product.manufacturer.phone}"}= @product.manufacturer.phone
         .col-sm-6.col-lg-12
-          %iframe{:src => "https://maps.google.com/maps?q=#{@product.manufacturer.lat},#{@product.manufacturer.lng}&amp;output=embed"}
+          #map{:height => '298px', :width => '222px'}
+%script{:src => "https://maps.googleapis.com/maps/api/js?v=3.exp"}
+:javascript
+  $(document).ready(function(){
+  var map;
+  var lan_lat = "#{@product.manufacturer.lat}, #{@product.manufacturer.lng}";
+        var centerMap = new google.maps.LatLng(lan_lat);
+        var stylez = [
+            {
+              featureType: "all",
+              elementType: "all",
+              stylers: [
+                { saturation: -100 }
+              ]
+            }
+        ];
+        var mapOptions = {
+            zoom: 16,
+            streetViewControl: false,
+            scrolltouch: false,
+            scrollwheel: false,
+            center: centerMap,
+            mapTypeControlOptions: {
+                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'tehgrayz']
+            }
+        };
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });
+        map.mapTypes.set('tehgrayz', mapType);
+        map.setMapTypeId('tehgrayz');
+
+         var marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(lan_lat),
+                  map: map,
+                  title: ''
+            });
+          function attachMessage(marker) {
+          var message="#{@product.manufacturer.name}";
+
+          var infowindow = new google.maps.InfoWindow(
+          { content: message,
+            size: new google.maps.Size(340,210)
+          });
+          infowindow.open(map,marker);
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+          });
+          }
+
+          attachMessage(marker);
+  });
