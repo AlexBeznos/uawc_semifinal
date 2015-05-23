@@ -1,3 +1,74 @@
 .content_item_text-white_line {
   width: 290px
 }
+
+.error-404 {
+  margin-top: 70px;
+  padding-bottom: 50px;
+  text-align: center;
+  font: 400 34px 'Open Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.1;
+}
+@media only screen and (max-width: 768px) {
+  .error-404 {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404 {
+    font-size: 16px;
+  }
+}
+.error-404_img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+.error-404_title {
+  margin: 18px 0 8px;
+  font: 800 38px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  .error-404_title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404_title {
+    font-size: 22px;
+  }
+}
+.error-404_link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font: 600 31px 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #01b4d5;
+  text-decoration: underline;
+}
+.error-404_link:hover {
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  .error-404_link {
+    font-size: 21px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .error-404_link {
+    font-size: 14px;
+  }
+}
+.error-404_link:hover {
+  color: #01a2c0;
+}
+@-moz-document url-prefix() {
+  .main-header_lang-list_item_link--active {
+    padding: 25px 17px;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .catalogue_adv--s2_text .content_item_text-white_line {
+    margin-top: -25px;
+  }
+}

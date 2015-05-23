@@ -10,6 +10,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by_slug(params[:id])
+    unless @product
+      redirect_to not_found_path
+    end
   end
 
   def search

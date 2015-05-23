@@ -1,6 +1,6 @@
 = content_for :title, "Категорія #{params[:category]}"
 
-  
+
 .wrapper
   .row
     %ul.breadcrumbs
@@ -56,3 +56,4 @@
                 %button.catalogue_icon-load{:role => "button"}
                 = succeed "\u{417}\u{430}\u{432}\u{430}\u{43d}\u{442}\u{430}\u{436}\u{438}\u{442}\u{438}" do
                   %br/
+= render 'shared/public_footer'

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :subscribers, only: :create
   resources :products, only: [:index, :show]
   get 'search' => 'products#search', as: :search
+  get '/404' => 'errors#not_found', as: :not_found
 
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
