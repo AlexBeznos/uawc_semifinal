@@ -11,6 +11,7 @@ module Uawc
     Rails.application.config.assets.precompile += %w( *.css )
     Rails.application.config.assets.precompile += %w( *.js )
     Rails.application.config.assets.precompile += %w( *.png )
+    Rails.application.config.assets.precompile += %w( *.ico )
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :ru, :ua]
