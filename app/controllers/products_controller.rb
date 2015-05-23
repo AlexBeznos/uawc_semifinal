@@ -11,4 +11,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find_by_slug(params[:id])
   end
+
+  def search
+    @products = Product.search(params[:search])
+  end
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :news, only: [:index, :show]
   resources :subscribers, only: :create
   resources :products, only: [:index, :show]
+  get 'search' => 'products#search', as: :search
 
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
