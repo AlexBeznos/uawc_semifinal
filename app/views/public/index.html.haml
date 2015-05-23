@@ -29,10 +29,10 @@
                 .news_item_descr= truncate(sanitize(news.body, :tags => %w(br a)), :length => 250)
 .subscription
   .wrapper
-    .block-title.block-title--subscription Оформити підписку на новини
+    .block-title.block-title--subscription= I18n.t('front.subscription.title')
     %hr.subscription_line/
     .subscription_title-descr
-      Дізнавайтеся першими про нові товари українського виробника
+      = I18n.t('front.subscription.text')
       %br
       - if flash[:notice]
         = flash[:notice]
@@ -44,7 +44,7 @@
       .subscription_form_item.subscription_form_item--input
         = f.text_field :email, class: 'subscription_form_control subscription_form_input', :placeholder => "E-mail"
       .subscription_form_item.subscription_form_item--submit
-        = f.submit "Підписатися", class: "subscription_form_control subscription_form_submit"
+        = f.submit I18n.t('front.subscription.button'), class: "subscription_form_control subscription_form_submit"
 
 .block-white.social
   .wrapper
@@ -52,7 +52,7 @@
       .row
         .social_title.block-title
           .square.square--xs.square--block-white
-          Ми в соцмережах
+          = I18n.t('front.social.title')
           .square.square--xs.square--block-white
       .row
         .wrapper

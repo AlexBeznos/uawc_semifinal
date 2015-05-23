@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   get 'search' => 'products#search', as: :search
   get '/404' => 'errors#not_found', as: :not_found
+  get '/lang/:locale' => 'localization#set_locale', as: :set_locale
 
   root to: 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.

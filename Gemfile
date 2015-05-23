@@ -46,6 +46,10 @@ gem "paperclip", "~> 4.2"
 # geo info
 gem 'geokit'
 
+# land gatter
+gem 'http_accept_language'
+
+
 
 
 
